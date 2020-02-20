@@ -15,19 +15,19 @@ recipes(one) <==> instructions(many)
 
 ingredients
 - id 
-- i_name
+- ingredient_name
 
 recipes
 - id
-- r_name
+- recipe_name
 
 instructions
 - id
 - step
 - description
-- r_id
+- recipe_id
 
 ingredients_recipes
-- i_id
-- r_id
+- ingredient_id
+- recipe_id
 - quantity
