@@ -23,10 +23,10 @@ recipes
 
 instructions
 - id
-- recipe_id
 - instruction_steps
+- recipe_id
 
-ingredients_recipes(instructions)
+ingredients_recipes
 - ingredient_id
 - recipe_id
 - quantity
