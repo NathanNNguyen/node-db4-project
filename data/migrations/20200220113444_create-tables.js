@@ -4,22 +4,23 @@ exports.up = function (knex) {
     // create ingredients table
     .createTable('ingredients', tbl => {
       tbl.increments();
-      tbl.string('i_name', 128).notNullable();
+      tbl.string('ingredient_name', 128).notNullable();
     })
 
     // create recipes table
     .createTable('recipes', tbl => {
       tbl.increments();
-      tbl.string('r_name', 128).notNullable();
+      tbl.string('recipe_name', 128).notNullable();
     })
 
     // create instructions table
     .createTable('instructions', tbl => {
       tbl.increments();
-      tbl.integer('description').notNullable().unique();
+      tbl.integer('step').notNullable()
+      tbl.string('description').notNullable();
 
       // foreign key set up
-      tbl.integer('r_id')
+      tbl.integer('recipe_id')
         .unsigned()
         .notNullable()
         .references('id')
@@ -27,20 +28,20 @@ exports.up = function (knex) {
     })
 
     .createTable('ingre-rec', tbl => {
-      tbl.integer('r_id')
+      tbl.integer('recipe_id')
         .unsigned()
         .notNullable()
         .references('id')
         .inTable('recipes');
 
-      tbl.integer('i_id')
+      tbl.integer('ingredient_id')
         .unsigned()
         .notNullable()
         .references('id')
         .inTable('ingredients');
-      tbl.primary(['r_id', 'i_id']);
+      tbl.primary(['recipe_id', 'ingredient_id']);
 
-      tbl.integer('quantity').notNullable();
+      tbl.string('quantity').notNullable();
     })
 };
 
