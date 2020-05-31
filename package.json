@@ -1,0 +1,21 @@
+{
+  "name": "db4-project",
+  "version": "1.0.0",
+  "description": "## Topics",
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanNNguyen/node-db4-project.git"
+  },
+  "author": "Nathan Nguyen",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.20.10",
+    "knex-cleaner": "^1.3.0",
+    "nodemon": "^2.0.2",
+    "sqlite3": "^4.1.1"
+  }
+}
